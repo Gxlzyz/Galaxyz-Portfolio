@@ -1,0 +1,274 @@
+
+body {
+  background-color: #080808;
+  color: white;
+ font-family: 'Inter', Arial, sans-serif;
+ padding-bottom: 20px;
+  margin: 0;
+  overflow-y: scroll;
+  text-shadow: 0 0 1px #c084fc;
+}
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #333; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #c084fc; border-radius: 10px; box-shadow: 0 0 5px #c084fc; }
+::-webkit-scrollbar-thumb:hover { background: #a25efc; }
+/* Base section styles */
+section {
+  padding: 60px 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Navbar {
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 3),    /* Solid dark at top */
+    rgba(8, 8, 8, 2.7),  /* Mostly dark in middle */
+    rgba(8, 8, 8, 0)     /* Fully transparent at bottom */
+  );
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Logo img { width: 48px; height: auto; }
+.NavLinks a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1em;
+  position: relative;
+  transition: color 0.3s;
+}
+.NavLinks a.active { color: #c997fb; }
+.NavLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #c084fc;
+  transition: width 0.3s ease;
+}
+.NavLinks a:hover::after, .NavLinks a.active::after { width: 100%; }
+.NavLinks a:hover { color: #a046fb; }
+/* Home */
+#home {
+  flex-direction: row;
+  flex-wrap: wrap;
+   padding-top: 0px; /* decrease this value */
+  justify-content: space-between;
+}
+.IntroText { max-width: 600px; }
+.Introduction { color: #fff; font-size: 3em; font-weight: bold; margin: 0.2em 0; }
+.MyName { color: #dfcbf4; text-shadow: 0 0 2px #c084fc, 0 0 2px #a25efc, 0 0 6px #7f4cf3; }
+.Occupation { color: #d8b4fe; font-size: 1.5em; margin-bottom: 30px; }
+.MainButton {
+  background: linear-gradient(to top, #733cb2, #a25efc);
+  color: #f8f4ff;
+  border: 1px solid #d5b4ff;
+  padding: 10px 20px;
+  margin: 10px 10px 10px 0;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 3px #a86df4;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.MainButton:hover { background: linear-gradient(to top, #955fe0, #bb5ffd); box-shadow: 0 0 6px #dcb9ff; }
+.LargeLogo img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  margin-top: 0px;     /* Increase this value to move it further down */
+  margin-right: 50px;   /* Negative value moves it to the left; decrease for less left shift */
+}
+
+/* About me */
+#about-me { margin-bottom: 100px; }
+.AboutMeBox {
+  background-color: #1d1d1d;
+  border-radius: 15px;
+  padding: 20px 40px 40px 40px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 1px solid #a25efc;
+  box-shadow: 0 0 8px #a25efc;
+}
+
+.AboutMeTitle p {
+  color: #c6a6e4;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  text-align: left;
+}
+
+/* Make content container a horizontal flexbox */
+.AboutMeContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px; /* spacing between image and text */
+}
+
+/* Image styling */
+.ImageSection {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #a25efc;
+  box-shadow: 0 0 8px #a25efc;
+}
+
+.ImageSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text styling */
+.TextSection {
+  flex-grow: 1; /* take remaining space */
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: white;
+  text-align: left;
+}
+
+.AboutMeTitle {
+  color: #c6a6e4;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  position: relative;
+}
+.AboutMeTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* move the underline closer to the text */
+  width: 100px;
+  border-bottom: 3px solid #c1a1e1;
+}
+
+/* Skills & Work sections */
+#skills { margin-top: -60px; }
+#work { margin-top: -60px; }
+.ContentSection { 
+  width: 100%; 
+  max-width: 900px; 
+  padding-left: 40px; 
+  padding-right: 40px; 
+  box-sizing: border-box; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Center Skills and Work titles and lines */
+.SkillsTitle,
+.WorkTitle {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.SkillsTitle p,
+.WorkTitle p {
+  font-size: 1.5em;
+  color: #c6a6e4;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.SkillsLine,
+.WorkLine {
+  display: block;
+  margin: 0 auto 20px auto;
+  background-color: #c084fc;
+  box-shadow: 0 0 2px #c084fc;
+  width: 500px;
+  height: 2px;
+}
+
+/* Tabs container: center content with gap and wrap */
+.SkillsTabs,
+.WorkTabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* Tab buttons: consistent size and styling */
+.TabButton {
+  background: #1d1d1d;
+  color: #c6a6e4;
+  border: 1px solid #a25efc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 2px #a25efc;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: center;
+}
+.TabButton:hover,
+.TabButton.active {
+  background: #a25efc;
+  color: #080808;
+  box-shadow: 0 0 8px #a25efc;
+  transform: scale(1.05);
+}
+
+.SkillsGrid,
+.WorkGrid {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.SkillItem,
+.WorkItem {
+  background: #1d1d1d;
+  border: 1px solid #a25efc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+  box-shadow: 0 0 2px #a25efc;
+  transition: all 0.3s ease;
+}
+.SkillItem:hover,
+.WorkItem:hover {
+  background: #a25efc;
+  color: #080808;
+  box-shadow: 0 0 8px #a25efc;
+  transform: scale(1.05);
+}
+.SkillItem img,
+.WorkItem img {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.SkillItem p,
+.WorkItem p {
+  font-size: 0.9em;
+  margin: 0;
+}
