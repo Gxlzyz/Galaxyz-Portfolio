@@ -273,40 +273,34 @@ section {
   margin: 0;
 }
 
-/* Add these to your existing CSS */
+/* Add this to your existing CSS */
 html, body {
-  overflow-x: hidden;
   width: 100%;
-  min-width: 1200px; /* Match your design's intended width */
+  min-width: 1200px; /* Match your design width */
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
 
 body {
-  zoom: 1; /* Prevent automatic zooming */
-  transform-origin: top left;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+/* Each section takes full viewport */
 section {
   min-height: 100vh;
-  height: 100vh;
-  overflow: hidden;
+  width: 1200px; /* Match your design width */
+  margin: 0 auto;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Disable all responsive behaviors */
-.Navbar, .MainContent, .AboutMeBox, .SkillsGrid, .WorkGrid {
-  transform: none !important;
-}
-
-/* Force original sizes */
-.LargeLogo img {
-  width: 280px !important;
-  height: 280px !important;
-}
-
-/* Disable any viewport-based sizing */
-@media (max-width: 768px) {
-  body {
-    transform: scale(1);
-    width: 1200px;
-  }
+/* Navigation stays fixed */
+.Navbar {
+  width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
