@@ -139,3 +139,77 @@ window.addEventListener('scroll', () => {
     });
   }
 });
+
+// WORK SECTION FILTER SYSTEM - INSTANT FILTERING
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all elements
+  const projectsTab = document.querySelector('.TabButton[data-tab="projects"]');
+  const assetsTab = document.querySelector('.TabButton[data-tab="assets"]');
+  const filterButtons = document.querySelectorAll('#projectFilters .TabButton');
+  const projectsGrid = document.getElementById('projects');
+  const projectItems = document.querySelectorAll('#projects .VideoProject');
+
+  // Initialize on load
+  function initialize() {
+    // Set default active states
+    projectsTab.classList.add('active');
+    document.querySelector('#projectFilters .TabButton[data-filter="all"]').classList.add('active');
+    
+    // Show all projects initially
+    filterProjects('all');
+  }
+
+  // Main filtering function
+  function filterProjects(category) {
+    projectItems.forEach(project => {
+      if (category === 'all' || project.dataset.category === category) {
+        project.style.display = 'flex';
+        // Force reflow/repaint for instant update
+        project.offsetHeight;
+      } else {
+        project.style.display = 'none';
+      }
+    });
+  }
+
+  // Tab click handlers
+  projectsTab.addEventListener('click', function() {
+    projectsTab.classList.add('active');
+    assetsTab.classList.remove('active');
+    projectsGrid.style.display = 'flex';
+    document.getElementById('assets').style.display = 'none';
+    document.getElementById('projectFilters').style.display = 'flex';
+    
+    // Reapply current filter
+    const activeFilter = document.querySelector('#projectFilters .TabButton.active');
+    if (activeFilter) filterProjects(activeFilter.dataset.filter);
+  });
+
+  assetsTab.addEventListener('click', function() {
+    assetsTab.classList.add('active');
+    projectsTab.classList.remove('active');
+    projectsGrid.style.display = 'none';
+    document.getElementById('assets').style.display = 'flex';
+    document.getElementById('projectFilters').style.display = 'none';
+  });
+
+  // Filter button click handlers
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Update active filter button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Apply filter immediately
+      filterProjects(this.dataset.filter);
+      
+      // Force refresh of projects display
+      projectsGrid.style.display = 'none';
+      projectsGrid.offsetHeight; // Trigger reflow
+      projectsGrid.style.display = 'flex';
+    });
+  });
+
+  // Initialize
+  initialize();
+});
