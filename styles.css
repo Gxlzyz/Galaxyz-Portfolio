@@ -272,3 +272,104 @@ section {
   font-size: 0.9em;
   margin: 0;
 }
+
+/* Video Projects Styling */
+.VideoProject {
+  background: #1d1d1d;
+  border: 1px solid #a25efc;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 3px #a25efc;
+}
+
+.VideoProject:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #a25efc;
+}
+
+.VideoContainer {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.VideoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.VideoTitle {
+  color: #c6a6e4;
+  font-size: 1em;
+  margin: 5px 0 0 0;
+  text-align: center;
+}
+
+/* Adjust grid for videos */
+#projects.SkillsGrid {
+  gap: 25px;
+  padding-bottom: 30px;
+}
+
+/* Project Tags */
+.ProjectTag {
+  display: inline-flex; /* Changed from flex to inline-flex */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background: #733cb2;
+  color: white;
+  padding: 4px 12px; /* Slightly increased padding */
+  border-radius: 12px;
+  font-size: 0.7em;
+  margin-top: 8px;
+  /* New properties */
+  width: fit-content; /* Size to content */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Video Project Adjustments */
+.VideoProject {
+  position: relative;
+  /* Keep your existing styles */
+}
+
+/* Category filter buttons */
+#projectFilters {
+  justify-content: center;
+}
+
+/* Make sure all projects are same height */
+.VideoProject {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.VideoContainer {
+  flex-grow: 1;
+}
+/* Ensure projects grid wraps properly */
+#projects.SkillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video project container */
+.VideoProject {
+  display: block; /* Changed from flex to block for filtering */
+  width: 300px;
+  /* Keep your other styles */
+}
+
