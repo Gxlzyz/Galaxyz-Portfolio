@@ -140,17 +140,21 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Prevent zooming and maintain fixed scale
-function maintainFixedLayout() {
-  const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  if (viewportWidth < 1200) {
-    document.body.style.transform = `scale(${viewportWidth/1200})`;
+// Center the page on mobile devices
+function centerPage() {
+  const viewportWidth = window.innerWidth;
+  const designWidth = 1200; // Match your CSS value
+  
+  if (viewportWidth < designWidth) {
+    const scale = viewportWidth / designWidth;
+    document.body.style.transform = `scale(${scale})`;
     document.body.style.transformOrigin = 'top left';
+    document.body.style.width = `${designWidth}px`;
   } else {
     document.body.style.transform = 'none';
   }
 }
 
 // Run on load and resize
-window.addEventListener('load', maintainFixedLayout);
-window.addEventListener('resize', maintainFixedLayout);
+window.addEventListener('load', centerPage);
+window.addEventListener('resize', centerPage);
