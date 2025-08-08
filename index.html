@@ -91,28 +91,73 @@
     </div>
   </section>
 
-  <!-- WORK SECTION -->
-  <section id="work" style="padding-top:60px;">
-    <div class="SkillsTitle">
-      <p><b>My Work</b></p>
-      <hr class="SkillsLine" />
+<!-- WORK SECTION -->
+<section id="work" style="padding-top:60px;">
+  <div class="SkillsTitle">
+    <p><b>My Work</b></p>
+    <hr class="SkillsLine">
+  </div>
+  
+  <div class="SkillsTabs">
+    <button class="TabButton active" data-tab="projects">Projects</button>
+    <button class="TabButton" data-tab="assets">Assets for Sale</button>
+  </div>
+
+  <!-- Project Type Filters -->
+  <div id="projectFilters" class="SkillsTabs" style="margin-top: 10px;">
+    <button class="TabButton active" data-filter="all">All</button>
+    <button class="TabButton" data-filter="scripting">Scripting</button>
+    <button class="TabButton" data-filter="building">Building</button>
+    <button class="TabButton" data-filter="modeling">Modeling</button>
+  </div>
+
+  <!-- Projects Tab Content -->
+  <div id="projects" class="SkillsGrid active">
+    <!-- Project 1 - Scripting -->
+    <div class="VideoProject" data-category="scripting">
+      <div class="VideoContainer">
+        <iframe src="https://www.youtube.com/embed/BS2Zbg_ACVA" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="VideoTitle"> Game Menu</p>
+      <span class="ProjectTag">Scripting</span>
     </div>
-    <div class="SkillsTabs">
-      <button class="TabButton active" data-tab="projects">Projects</button>
-      <button class="TabButton" data-tab="assets">Assets for Sale</button>
+    
+    <!-- Project 2 - Scripting -->
+    <div class="VideoProject" data-category="scripting">
+      <div class="VideoContainer">
+        <iframe src="https://www.youtube.com/embed/6UF7Y8exCZ0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="VideoTitle">Fire Ball Showcase</p>
+      <span class="ProjectTag">Scripting</span>
     </div>
 
-    <div id="projects" class="SkillsGrid active">
-      <div class="SkillItem">
-        <img src="Images/project-placeholder.png" alt="Project" /><p>Placeholder</p>
+    <!-- Project 3 - Building -->
+    <div class="VideoProject" data-category="scripting">
+      <div class="VideoContainer">
+        <iframe src="https://www.youtube.com/embed/Xyu0mFPefiY" frameborder="0" allowfullscreen></iframe>
       </div>
+      <p class="VideoTitle">Pets + Hatching System</p>
+      <span class="ProjectTag">Scripting</span>
     </div>
-    <div id="assets" class="SkillsGrid" style="display:none;">
-      <div class="SkillItem">
-        <img src="Images/asset-placeholder.png" alt="Asset" /><p>Placeholder</p>
+
+    <!-- Project 4 - Modeling -->
+    <div class="VideoProject" data-category="scripting">
+      <div class="VideoContainer">
+        <iframe src="https://www.youtube.com/embed/rOa2T52qJfw" frameborder="0" allowfullscreen></iframe>
       </div>
+      <p class="VideoTitle">Combat System *Very rushed*</p>
+      <span class="ProjectTag">Scripting</span>
     </div>
-  </section>
+  </div>
+
+  <!-- Assets Tab Content -->
+  <div id="assets" class="SkillsGrid" style="display:none;">
+    <div class="SkillItem">
+      <img src="Images/asset-placeholder.png" alt="Asset">
+      <p>Coming Soon</p>
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT SECTION -->
    <br>
