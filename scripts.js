@@ -139,3 +139,18 @@ window.addEventListener('scroll', () => {
     });
   }
 });
+
+// Prevent zooming and maintain fixed scale
+function maintainFixedLayout() {
+  const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  if (viewportWidth < 1200) {
+    document.body.style.transform = `scale(${viewportWidth/1200})`;
+    document.body.style.transformOrigin = 'top left';
+  } else {
+    document.body.style.transform = 'none';
+  }
+}
+
+// Run on load and resize
+window.addEventListener('load', maintainFixedLayout);
+window.addEventListener('resize', maintainFixedLayout);
