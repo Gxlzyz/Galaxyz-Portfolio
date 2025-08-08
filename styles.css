@@ -272,3 +272,41 @@ section {
   font-size: 0.9em;
   margin: 0;
 }
+
+/* Add these to your existing CSS */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 1200px; /* Match your design's intended width */
+}
+
+body {
+  zoom: 1; /* Prevent automatic zooming */
+  transform-origin: top left;
+}
+
+section {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Disable all responsive behaviors */
+.Navbar, .MainContent, .AboutMeBox, .SkillsGrid, .WorkGrid {
+  transform: none !important;
+}
+
+/* Force original sizes */
+.LargeLogo img {
+  width: 280px !important;
+  height: 280px !important;
+}
+
+/* Disable any viewport-based sizing */
+@media (max-width: 768px) {
+  body {
+    transform: scale(1);
+    width: 1200px;
+  }
+}
