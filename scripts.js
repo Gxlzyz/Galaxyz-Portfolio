@@ -139,22 +139,3 @@ window.addEventListener('scroll', () => {
     });
   }
 });
-
-// Center the page on mobile devices
-function centerPage() {
-  const viewportWidth = window.innerWidth;
-  const designWidth = 1200; // Match your CSS value
-  
-  if (viewportWidth < designWidth) {
-    const scale = viewportWidth / designWidth;
-    document.body.style.transform = `scale(${scale})`;
-    document.body.style.transformOrigin = 'top left';
-    document.body.style.width = `${designWidth}px`;
-  } else {
-    document.body.style.transform = 'none';
-  }
-}
-
-// Run on load and resize
-window.addEventListener('load', centerPage);
-window.addEventListener('resize', centerPage);
