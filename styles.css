@@ -272,35 +272,3 @@ section {
   font-size: 0.9em;
   margin: 0;
 }
-
-/* Add this to your existing CSS */
-html, body {
-  width: 100%;
-  min-width: 1200px; /* Match your design width */
-  overflow-x: auto; /* Allows horizontal scrolling if needed */
-}
-
-body {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Each section takes full viewport */
-section {
-  min-height: 100vh;
-  width: 1200px; /* Match your design width */
-  margin: 0 auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Navigation stays fixed */
-.Navbar {
-  width: 1200px;
-  left: 50%;
-  transform: translateX(-50%);
-}
