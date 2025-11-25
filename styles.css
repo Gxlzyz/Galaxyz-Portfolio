@@ -373,3 +373,34 @@ section {
   /* Keep your other styles */
 }
 
+.VideoContainer img {
+  width: 100%;        /* Make image span full width of its container */
+  height: auto;       /* Keep aspect ratio */
+  display: block;     /* Remove inline spacing */
+  object-fit: cover;  /* Crop nicely if container has fixed height */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+  /* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .Introduction { font-size: 3em; }
+  .LargeLogo img { width: 280px; height: 280px; }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  section { padding: 40px 30px; }
+  .Introduction { font-size: 2.2em; }
+  .LargeLogo img { width: 220px; height: 220px; }
+  .AboutMeContent { flex-direction: column; text-align: center; }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  section { padding: 20px 15px; }
+  .Navbar { flex-direction: column; align-items: center; }
+  .NavLinks a { margin: 10px 0; }
+  .IntroText { max-width: 100%; text-align: center; }
+  .LargeLogo img { width: 160px; height: 160px; margin: 20px auto; }
+  .VideoProject { width: 100%; max-width: 350px; }
+}
