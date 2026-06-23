@@ -375,9 +375,9 @@ section {
 
 .VideoContainer img {
   width: 100%;        /* Make image span full width of its container */
-  height: 100%;       /* Keep aspect ratio */
+  height: auto;       /* Keep aspect ratio */
   display: block;     /* Remove inline spacing */
-  object-fit: cover;   /* Crop nicely if container has fixed height */
+  object-fit: cover;  /* Crop nicely if container has fixed height */
   border-radius: 8px; /* Optional: rounded corners */
 }
 
